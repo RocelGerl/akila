@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>Catálogo - Akila Importadora</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    </style>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-akila-gradient fixed-top py-3">
+        <div class="container">
+            <a class="navbar-brand fw-bold fs-3" href="#">
+                <img src="img/akila.jpg" alt="Logo de Akila Importadora - Letra A estilizada en azul y blanco"
+                    class="me-2 img-fluid rounded-circle" style="width: 50px;">
+
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="index.html#inicio">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#vehiculos">Vehículos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#motos">Motos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#cuadratracks">Cuadratracks</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#taller">Taller</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#nosotros">Nosotros</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#contacto">Contacto</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="catalog-hero">
+        <div class="container text-center">
+            <h1 class="display-4 fw-bold mb-3">Catálogo de Vehículos</h1>
+            <p class="lead d-none d-md-block">Encuentra el vehículo perfecto para tus necesidades</p>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row">
+                <!-- Filters Sidebar -->
+                <div class="col-lg-3 mb-4">
+                    <!-- Botón para mostrar/ocultar filtros en móviles -->
+                    <button class="btn btn-akila w-100 d-lg-none mb-3" type="button" data-bs-toggle="collapse" data-bs-target="#filterCollapse">
+                        <i class="fas fa-filter me-2"></i> Mostrar Filtros
+                    </button>
+                    
+                    <!-- Contenedor colapsable -->
+                    <div class="collapse d-lg-block" id="filterCollapse">
+                        <div class="filter-sidebar sticky-top" style="top: 80px;">
+                            <div class="d-flex justify-content-between align-items-center mb-3 d-lg-none">
+                                <h5 class="mb-0">Filtros</h5>
+                                <button class="btn-close" type="button" data-bs-toggle="collapse" data-bs-target="#filterCollapse"></button>
+                            </div>
+                            
+                            <div class="filter-group">
+                                <h5 class="filter-title">Tipo de Vehículo</h5>
+                                <div class="filter-checkbox">
+                                    <label>
+                                        <input type="checkbox" class="filter-check" data-filter="type" value="carro">
+                                        Automóviles
+                                    </label>
+                                    <label>
+                                        <input type="checkbox" class="filter-check" data-filter="type" value="moto">
+                                        Motocicletas
+                                    </label>
+                                    <label>
+                                        <input type="checkbox" class="filter-check" data-filter="type" value="quad">
+                                        Cuadratracks
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="filter-group">
+                                <h5 class="filter-title">Marcas</h5>
+                                <div class="filter-checkbox">
+                                    <label>
+                                        <input type="checkbox" class="filter-check" data-filter="brand" value="toyota">
+                                        Toyota
+                                    </label>
+                                    <label>
+                                        <input type="checkbox" class="filter-check" data-filter="brand" value="honda">
+                                        Honda
+                                    </label>
+                                    <label>
+                                        <input type="checkbox" class="filter-check" data-filter="brand" value="suzuki">
+                                        Suzuki
+                                    </label>
+                                    <label>
+                                        <input type="checkbox" class="filter-check" data-filter="brand" value="yamaha">
+                                        Yamaha
+                                    </label>
+                                    <label>
+                                        <input type="checkbox" class="filter-check" data-filter="brand" value="kia">
+                                        Kia
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="filter-group">
+                                <h5 class="filter-title">Rango de Precio</h5>
+                                <input type="range" class="form-range mb-2" min="0" max="50000" step="1000" id="priceRange"
+                                    value="50000">
+                                <div class="price-range-values">
+                                    <span>$0</span>
+                                    <span>$50,000+</span>
+                                </div>
+                            </div>
+
+                            <div class="filter-group">
+                                <h5 class="filter-title">Año</h5>
+                                <div class="filter-checkbox">
+                                    <label>
+                                        <input type="checkbox" class="filter-check" data-filter="year" value="2023">
+                                        2023
+                                    </label>
+                                    <label>
+                                        <input type="checkbox" class="filter-check" data-filter="year" value="2022">
+                                        2022
+                                    </label>
+                                    <label>
+                                        <input type="checkbox" class="filter-check" data-filter="year" value="2021">
+                                        2021
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="filter-group">
+                                <h5 class="filter-title">Transmisión</h5>
+                                <div class="filter-checkbox">
+                                    <label>
+                                        <input type="checkbox" class="filter-check" data-filter="transmission"
+                                            value="automatic">
+                                        Automático
+                                    </label>
+                                    <label>
+                                        <input type="checkbox" class="filter-check" data-filter="transmission"
+                                            value="manual">
+                                        Manual
+                                    </label>
+                                </div>
+                            </div>
+
+                            <button class="btn btn-akila w-100 mt-3" id="resetFilters">
+                                <i class="fas fa-sync-alt me-2"></i> Limpiar Filtros
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Vehicles Listing -->
+                <div class="col-lg-9">
+                    <div class="d-flex justify-content-between align-items-center mb-4 flex-column flex-md-row">
+                        <div class="mb-2 mb-md-0">
+                            <h4 class="mb-0">Mostrando <span id="vehicleCount">12</span> vehículos</h4>
+                        </div>
+                        <div class="w-100 w-md-auto">
+                            <select class="form-select" id="sortBy">
+                                <option value="name-asc">Ordenar por: Nombre (A-Z)</option>
+                                <option value="name-desc">Nombre (Z-A)</option>
+                                <option value="price-asc">Precio (Menor a Mayor)</option>
+                                <option value="price-desc">Precio (Mayor a Menor)</option>
+                                <option value="year-desc">Año (Más Nuevo)</option>
+                                <option value="year-asc">Año (Más Viejo)</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="row" id="vehicleContainer">
+                        <!-- Vehicle 1 -->
+                        <div class="col-md-6 col-lg-4 mb-4" data-type="carro" data-brand="toyota" data-year="2023"
+                            data-price="35000" data-transmission="automatic">
+                            <div class="vehicle-card">
+                                <div class="badge-discount rounded-pill px-3 py-1 text-white">10% OFF</div>
+                                <div class="vehicle-img-container">
+                                    <img src="https://placehold.co/600x400"
+                                        alt="Toyota SUV 2023 color blanco perla con rines negros modernos"
+                                        class="vehicle-img">
+                                </div>
+                                <div class="p-4">
+                                    <h5>Toyota SUV 2023</h5>
+                                    <p class="text-muted">Automático | 4x4 | Híbrido</p>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <div>
+                                            <span class="fw-bold text-dark fs-5">$35,000</span>
+                                            <span class="text-decoration-line-through text-muted ms-2">$39,000</span>
+                                        </div>
+                                        <button class="btn btn-sm btn-akila">Detalles</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Vehicle 2 -->
+                        <div class="col-md-6 col-lg-4 mb-4" data-type="moto" data-brand="honda" data-year="2023"
+                            data-price="8500" data-transmission="manual">
+                            <div class="vehicle-card">
+                                <div class="vehicle-img-container">
+                                    <img src="https://placehold.co/600x400"
+                                        alt="Honda motocicleta deportiva 1000CC color rojo con detalles negros"
+                                        class="vehicle-img">
+                                </div>
+                                <div class="p-4">
+                                    <h5>Honda CBR1000RR</h5>
+                                    <p class="text-muted">Manual | 1000CC | ABS</p>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <span class="fw-bold text-dark fs-5">$8,500</span>
+                                        <button class="btn btn-sm btn-akila">Detalles</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Vehicle 3 -->
+                        <div class="col-md-6 col-lg-4 mb-4" data-type="carro" data-brand="kia" data-year="2022"
+                            data-price="28900" data-transmission="automatic">
+                            <div class="vehicle-card">
+                                <div class="vehicle-img-container">
+                                    <img src="https://placehold.co/600x400"
+                                        alt="Kia Sedán 2022 color gris metálico con pantalla táctil grande"
+                                        class="vehicle-img">
+                                </div>
+                                <div class="p-4">
+                                    <h5>Kia Optima LX 2022</h5>
+                                    <p class="text-muted">Automático | 4 Puertas | 2.5L</p>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <span class="fw-bold text-dark fs-5">$28,900</span>
+                                        <button class="btn btn-sm btn-akila">Detalles</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Vehicle 4 -->
+                        <div class="col-md-6 col-lg-4 mb-4" data-type="quad" data-brand="yamaha" data-year="2023"
+                            data-price="6200" data-transmission="manual">
+                            <div class="vehicle-card">
+                                <div class="vehicle-img-container">
+                                    <img src="https://placehold.co/600x400"
+                                        alt="Yamaha Cuadratrack deportivo color azul con neumáticos agresivos"
+                                        class="vehicle-img">
+                                </div>
+                                <div class="p-4">
+                                    <h5>Yamaha Raptor 700R</h5>
+                                    <p class="text-muted">Manual | 700CC | 4x4</p>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <span class="fw-bold text-dark fs-5">$6,200</span>
+                                        <button class="btn btn-sm btn-akila">Detalles</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Vehicle 5 -->
+                        <div class="col-md-6 col-lg-4 mb-4" data-type="moto" data-brand="suzuki" data-year="2023"
+                            data-price="5500" data-transmission="manual">
+                            <div class="vehicle-card">
+                                <div class="vehicle-img-container">
+                                    <img src="https://placehold.co/600x400"
+                                        alt="Suzuki moto tipo enduro amarilla con suspensión de competencia"
+                                        class="vehicle-img">
+                                </div>
+                                <div class="p-4">
+                                    <h5>Suzuki DR-Z400</h5>
+                                    <p class="text-muted">Manual | 400CC | Off-road</p>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <span class="fw-bold text-dark fs-5">$5,500</span>
+                                        <button class="btn btn-sm btn-akila">Detalles</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Vehicle 6 -->
+                        <div class="col-md-6 col-lg-4 mb-4" data-type="carro" data-brand="toyota" data-year="2023"
+                            data-price="42000" data-transmission="automatic">
+                            <div class="vehicle-card">
+                                <div class="badge-discount rounded-pill px-3 py-1 text-white">Oferta</div>
+                                <div class="vehicle-img-container">
+                                    <img src="https://placehold.co/600x400"
+                                        alt="Toyota Hilux Doble Cabina 2023 color negro con accesorios premium"
+                                        class="vehicle-img">
+                                </div>
+                                <div class="p-4">
+                                    <h5>Toyota Hilux 4x4</h5>
+                                    <p class="text-muted">Automático | Diesel | Doble Cabina</p>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <span class="fw-bold text-dark fs-5">$42,000</span>
+                                        <button class="btn btn-sm btn-akila">Detalles</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Vehicle 7 -->
+                        <div class="col-md-6 col-lg-4 mb-4" data-type="quad" data-brand="honda" data-year="2022"
+                            data-price="4800" data-transmission="automatic">
+                            <div class="vehicle-card">
+                                <div class="vehicle-img-container">
+                                    <img src="https://placehold.co/600x400"
+                                        alt="Honda Cuadratrack utilitario verde con caja de carga y faros LED"
+                                        class="vehicle-img">
+                                </div>
+                                <div class="p-4">
+                                    <h5>Honda FourTrax</h5>
+                                    <p class="text-muted">Automático | 420CC | Utilitario</p>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <span class="fw-bold text-dark fs-5">$4,800</span>
+                                        <button class="btn btn-sm btn-akila">Detalles</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Vehicle 8 -->
+                        <div class="col-md-6 col-lg-4 mb-4" data-type="moto" data-brand="yamaha" data-year="2023"
+                            data-price="3200" data-transmission="automatic">
+                            <div class="vehicle-card">
+                                <div class="vehicle-img-container">
+                                    <img src="https://placehold.co/600x400"
+                                        alt="Yamaha scooter estilo vintage blanco con canasta frontal"
+                                        class="vehicle-img">
+                                </div>
+                                <div class="p-4">
+                                    <h5>Yamaha Neo's</h5>
+                                    <p class="text-muted">Automático | 115CC | Económico</p>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <span class="fw-bold text-dark fs-5">$3,200</span>
+                                        <button class="btn btn-sm btn-akila">Detalles</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Vehicle 9 -->
+                        <div class="col-md-6 col-lg-4 mb-4" data-type="carro" data-brand="kia" data-year="2023"
+                            data-price="36000" data-transmission="automatic">
+                            <div class="vehicle-card">
+                                <div class="vehicle-img-container">
+                                    <img src="https://placehold.co/600x400"
+                                        alt="Kia SUV 7 plazas color azul oscuro con llantas de aleación"
+                                        class="vehicle-img">
+                                </div>
+                                <div class="p-4">
+                                    <h5>Kia Sorento SX</h5>
+                                    <p class="text-muted">Automático | 7 Asientos | Turbo</p>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <span class="fw-bold text-dark fs-5">$36,000</span>
+                                        <button class="btn btn-sm btn-akila">Detalles</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Vehicle 10 -->
+                        <div class="col-md-6 col-lg-4 mb-4" data-type="moto" data-brand="honda" data-year="2023"
+                            data-price="5500" data-transmission="manual">
+                            <div class="vehicle-card">
+                                <div class="badge-discount rounded-pill px-3 py-1 text-white">5% OFF</div>
+                                <div class="vehicle-img-container">
+                                    <img src="https://placehold.co/600x400"
+                                        alt="Honda moto estilo touring roja con maletas laterales y parabrisas alto"
+                                        class="vehicle-img">
+                                </div>
+                                <div class="p-4">
+                                    <h5>Honda CB500X</h5>
+                                    <p class="text-muted">Manual | 500CC | Adventure</p>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <span class="fw-bold text-dark fs-5">$5,500</span>
+                                        <button class="btn btn-sm btn-akila">Detalles</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Vehicle 11 -->
+                        <div class="col-md-6 col-lg-4 mb-4" data-type="quad" data-brand="suzuki" data-year="2023"
+                            data-price="5800" data-transmission="manual">
+                            <div class="vehicle-card">
+                                <div class="vehicle-img-container">
+                                    <img src="https://placehold.co/600x400"
+                                        alt="Suzuki cuadratrack deportivo naranja con suspensión ajustable"
+                                        class="vehicle-img">
+                                </div>
+                                <div class="p-4">
+                                    <h5>Suzuki LTR450</h5>
+                                    <p class="text-muted">Manual | 450CC | Racing</p>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <span class="fw-bold text-dark fs-5">$5,800</span>
+                                        <button class="btn btn-sm btn-akila">Detalles</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Vehicle 12 -->
+                        <div class="col-md-6 col-lg-4 mb-4" data-type="carro" data-brand="toyota" data-year="2023"
+                            data-price="27500" data-transmission="automatic">
+                            <div class="vehicle-card">
+                                <div class="vehicle-img-container">
+                                    <img src="https://placehold.co/600x400"
+                                        alt="Toyota Sedán híbrido color plateado con detalles cromados"
+                                        class="vehicle-img">
+                                </div>
+                                <div class="p-4">
+                                    <h5>Toyota Corolla Hybrid</h5>
+                                    <p class="text-muted">Automático | Híbrido | 4 Puertas</p>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <span class="fw-bold text-dark fs-5">$27,500</span>
+                                        <button class="btn btn-sm btn-akila">Detalles</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Pagination -->
+                    <nav aria-label="Page navigation">
+                        <ul class="pagination justify-content-center">
+                            <li class="page-item disabled">
+                                <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Anterior</a>
+                            </li>
+                            <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                            <li class="page-item"><a class="page-link" href="#">2</a></li>
+                            <li class="page-item"><a class="page-link" href="#">3</a></li>
+                            <li class="page-item">
+                                <a class="page-link" href="#">Siguiente</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4">
+                    <img src="img/akila.jpg" alt="Logo de Akila Importadora en blanco" class="mb-3 rounded-4" style="width: 80px; height: 50px;">
+                    <p>Somos una empresa que comercializa e importa vehículos, motocicletas y cuadratracks "0" Km. a
+                        crédito y al contado.</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-6 mb-4">
+                    <h5>Enlaces</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="index.html" class="text-light">Inicio</a></li>
+                        <li><a href="catalogo.html" class="text-light">Catálogo</a></li>
+                        <li><a href="index.html#taller" class="text-light">Taller</a></li>
+                        <li><a href="index.html#contacto" class="text-light">Contacto</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <h5>Vehículos</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="catalogo.html?type=carro" class="text-light">Automóviles</a></li>
+                        <li><a href="catalogo.html?type=moto" class="text-light">Motocicletas</a></li>
+                        <li><a href="catalogo.html?type=quad" class="text-light">Cuadratracks</a></li>
+                        <li><a href="catalogo.html" class="text-light">Ofertas</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 mb-4">
+                    <h5>Contacto</h5>
+                    <ul class="list-unstyled">
+                        <li><i class="fas fa-map-marker-alt me-2"></i> Av. Principal 1234, Ciudad</li>
+                        <li><i class="fas fa-phone me-2"></i> +123 456 7890</li>
+                        <li><i class="fas fa-envelope me-2"></i> info@akilaimportadora.com</li>
+                        <li><i class="fas fa-clock me-2"></i> Lun-Vie: 9AM - 6PM</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-top pt-3 mt-3 text-center">
+                <p class="mb-0">&copy; 2025 Akila Importadora. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const filterChecks = document.querySelectorAll('.filter-check');
+            const priceRange = document.getElementById('priceRange');
+            const sortBy = document.getElementById('sortBy');
+            const resetFilters = document.getElementById('resetFilters');
+            const vehicleContainer = document.getElementById('vehicleContainer');
+            const vehicles = Array.from(document.querySelectorAll('#vehicleContainer > div'));
+            const vehicleCount = document.getElementById('vehicleCount');
+
+            // Función para aplicar filtros
+            function applyFilters() {
+                const selectedTypes = Array.from(document.querySelectorAll('.filter-check[data-filter="type"]:checked')).map(el => el.value);
+                const selectedBrands = Array.from(document.querySelectorAll('.filter-check[data-filter="brand"]:checked')).map(el => el.value);
+                const selectedYears = Array.from(document.querySelectorAll('.filter-check[data-filter="year"]:checked')).map(el => el.value);
+                const selectedTransmissions = Array.from(document.querySelectorAll('.filter-check[data-filter="transmission"]:checked')).map(el => el.value);
+                const maxPrice = parseInt(priceRange.value);
+
+                vehicles.forEach(vehicle => {
+                    const type = vehicle.getAttribute('data-type');
+                    const brand = vehicle.getAttribute('data-brand');
+                    const year = vehicle.getAttribute('data-year');
+                    const transmission = vehicle.getAttribute('data-transmission');
+                    const price = parseInt(vehicle.getAttribute('data-price'));
+
+                    const typeMatch = selectedTypes.length === 0 || selectedTypes.includes(type);
+                    const brandMatch = selectedBrands.length === 0 || selectedBrands.includes(brand);
+                    const yearMatch = selectedYears.length === 0 || selectedYears.includes(year);
+                    const transmissionMatch = selectedTransmissions.length === 0 || selectedTransmissions.includes(transmission);
+                    const priceMatch = price <= maxPrice;
+
+                    if (typeMatch && brandMatch && yearMatch && transmissionMatch && priceMatch) {
+                        vehicle.style.display = 'block';
+                    } else {
+                        vehicle.style.display = 'none';
+                    }
+                });
+
+                // Actualizar contador de vehículos visibles
+                const visibleCount = vehicles.filter(v => v.style.display !== 'none').length;
+                vehicleCount.textContent = visibleCount;
+                
+                // Cerrar filtros en móviles después de aplicar
+                if (window.innerWidth < 992) {
+                    const collapse = new bootstrap.Collapse(document.getElementById('filterCollapse'), {
+                        toggle: false
+                    });
+                    collapse.hide();
+                }
+            }
+
+            // Función para ordenar vehículos
+            function sortVehicles() {
+                const sortValue = sortBy.value;
+                const [key, order] = sortValue.split('-');
+
+                vehicles.sort((a, b) => {
+                    let aValue, bValue;
+
+                    if (key === 'price' || key === 'year') {
+                        aValue = parseInt(a.getAttribute(`data-${key}`));
+                        bValue = parseInt(b.getAttribute(`data-${key}`));
+                    } else if (key === 'name') {
+                        aValue = a.querySelector('h5').textContent.toLowerCase();
+                        bValue = b.querySelector('h5').textContent.toLowerCase();
+                    }
+
+                    if (order === 'asc') {
+                        return aValue > bValue ? 1 : -1;
+                    } else {
+                        return aValue < bValue ? 1 : -1;
+                    }
+                });
+
+                // Re-insertar vehículos ordenados
+                vehicles.forEach(vehicle => {
+                    vehicleContainer.appendChild(vehicle);
+                });
+            }
+
+            // Event listeners
+            filterChecks.forEach(check => {
+                check.addEventListener('change', applyFilters);
+            });
+
+            priceRange.addEventListener('input', applyFilters);
+            sortBy.addEventListener('change', sortVehicles);
+
+            resetFilters.addEventListener('click', function() {
+                // Uncheck all checkboxes
+                filterChecks.forEach(check => {
+                    check.checked = false;
+                });
+
+                // Reset price range
+                priceRange.value = 50000;
+
+                // Reset sort
+                sortBy.selectedIndex = 0;
+
+                // Apply filters
+                applyFilters();
+                sortVehicles();
+
+                // Reset all vehicles to visible
+                vehicles.forEach(vehicle => {
+                    vehicle.style.display = 'block';
+                });
+
+                // Update count
+                vehicleCount.textContent = vehicles.length;
+            });
+
+            // Initialize counts
+            vehicleCount.textContent = vehicles.length;
+
+            // Redimensionamiento para ajustar sticky en móviles
+            window.addEventListener('resize', function() {
+                const filterSidebar = document.querySelector('.filter-sidebar');
+                if (window.innerWidth < 992) {
+                    filterSidebar.style.position = 'relative';
+                    filterSidebar.style.top = 'auto';
+                } else {
+                    filterSidebar.style.position = 'sticky';
+                    filterSidebar.style.top = '80px';
+                }
+            });
+
+            // Inicializar posición del sidebar
+            if (window.innerWidth < 992) {
+                document.querySelector('.filter-sidebar').style.position = 'relative';
+            }
+        });
+    </script>
+</body>
+
+</html>
