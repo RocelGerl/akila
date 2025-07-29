@@ -646,45 +646,22 @@
         </div>
     </section>
 
-    <!-- Brands Sect ion -->
     <section class="py-5 bg-light" id="marcas">
         <div class="container">
             <div class="text-center mb-5">
                 <h2 class="display-5 fw-bold mb-3">Marcas que Representamos</h2>
                 <p class="lead">Calidad y confianza en cada vehículo</p>
             </div>
-            <div class="row g-4 justify-content-center align-items-center">
-                <div class="col-6 col-sm-4 col-md-3 col-lg-2 animate__animated" data-anim="fadeInUp">
-                    <div class="brand-logo-container p-3 d-flex align-items-center justify-content-center">
-                        <img src="https://placehold.co/200x100" alt="Logo de Marca 1" class="img-fluid"
-                            style="max-height: 80px; width: auto;">
-                    </div>
+
+            <div class="brands-slider-container">
+                <div class="brands-slider-track" id="brands-container">
+                    <!-- Las marcas se cargarán aquí dinámicamente -->
                 </div>
-                <div class="col-6 col-sm-4 col-md-3 col-lg-2 animate__animated" data-anim="fadeInUp"
-                    data-anim-delay="100">
-                    <div class="brand-logo-container p-3 d-flex align-items-center justify-content-center">
-                        <img src="https://placehold.co/200x100" alt="Logo de Marca 2" class="img-fluid"
-                            style="max-height: 80px; width: auto;">
-                    </div>
-                </div>
-                <div class="col-6 col-sm-4 col-md-3 col-lg-2 animate__animated" data-anim="fadeInUp"
-                    data-anim-delay="200">
-                    <div class="brand-logo-container p-3 d-flex align-items-center justify-content-center">
-                        <img src="https://placehold.co/200x100" alt="Logo de Marca 3" class="img-fluid"
-                            style="max-height: 80px; width: auto;">
-                    </div>
-                </div>
-                <div class="col-6 col-sm-4 col-md-3 col-lg-2 animate__animated" data-anim="fadeInUp"
-                    data-anim-delay="300">
-                    <div class="brand-logo-container p-3 d-flex align-items-center justify-content-center">
-                        <img src="https://placehold.co/200x100" alt="Logo de Marca 4" class="img-fluid"
-                            style="max-height: 80px; width: auto;">
-                    </div>
-                </div>
-                <!-- Agrega más marcas según sea necesario -->
             </div>
         </div>
     </section>
+
+
 
     <!-- Footer -->
     <footer class="footer">
@@ -757,6 +734,49 @@
                 navbar.classList.remove('scrolled');
             }
         });
+
+
+
+
+        const brands = [
+            { name: "Benelli", logo: "img/benelli.png" },
+            { name: "BYD", logo: "img/byd.png" },
+            { name: "Cronos", logo: "img/cronos.png" },
+            { name: "Katana", logo: "img/katana.png" },
+            { name: "Keeway", logo: "img/keeway.png" },
+            { name: "Loncin", logo: "img/loncin.png" },
+            { name: "Power Motorcycle", logo: "img/power.png" },
+            { name: "Rooder", logo: "img/rooder.png" },
+            { name: "Serna Motos", logo: "img/serna.png" },
+            { name: "Skyteam", logo: "img/skyteam.png" },
+            { name: "Trueno", logo: "img/trueno.png" },
+            { name: "Vento Pro", logo: "img/ventopro.png" },
+            { name: "Voge", logo: "img/voge.png" },
+            { name: "Zeus Motorcycles", logo: "img/zeus.png" }
+        ];
+
+        function loadBrands() {
+            const container = document.getElementById('brands-container');
+
+            const duplicatedBrands = [...brands, ...brands];
+
+            duplicatedBrands.forEach((brand, index) => {
+                const brandElement = document.createElement('div');
+                brandElement.className = 'brand-slide animate__animated';
+                brandElement.setAttribute('data-anim', 'fadeIn');
+
+                brandElement.innerHTML = `
+                <div class="brand-logo-container">
+                    <img src="${brand.logo}" alt="Logo de ${brand.name}" class="img-fluid">
+                    <p class="mt-2">${brand.name}</p>
+                </div>
+            `;
+
+                container.appendChild(brandElement);
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', loadBrands);
     </script>
 </body>
 
